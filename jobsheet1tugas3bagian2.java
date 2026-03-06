@@ -35,7 +35,7 @@ public class jobsheet1tugas3bagian2 {
     public static void cariHari(String[][] jadwal, int n, String hariCari) {
         boolean ditemukan = false;
 
-        System.out.println("\nJadwal pada hari " + hariCari + ":");
+        System.out.println("\nJadwal pada hari :" + hariCari );
 
         for (int i = 0; i < n; i++) {
             if (jadwal[i][2].equalsIgnoreCase(hariCari)) {

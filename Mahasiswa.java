@@ -8,7 +8,11 @@ public class Mahasiswa {
         this.nama = nama;
         this.nim = nim;
         this.kelas = kelas;
-        updateIpk(ipk);
+        this.ipk = ipk;
+    }
+
+    public Mahasiswa() {
+        //TODO Auto-generated constructor stub
     }
 
     void tampilkanInformasi() {
@@ -23,7 +27,7 @@ public class Mahasiswa {
     }
 
     void updateIpk(double ipkBaru) {
-        if (ipkBaru >= 0.0 && ipkBaru <= 4.0) {
+        if (ipkBaru >= 0.0 || ipkBaru <= 4.0) {
             ipk = ipkBaru;
         } else {
             System.out.println("IPK tidak valid. Harus antara 0.0 dan 4.0");
@@ -31,9 +35,11 @@ public class Mahasiswa {
     }
 
     String nilaiKinerja() {
-        if (ipk >= 3.5) {
+        if (ipk >= 4.0) {
+            return "tolol";
+        } else if(ipk >= 3.5){
             return "Kinerja sangat baik";
-        } else if (ipk >= 3.0) {
+        }else if (ipk >= 3.0) {
             return "Kinerja baik";
         } else if (ipk >= 2.0) {
             return "Kinerja cukup";
@@ -51,11 +57,13 @@ public class Mahasiswa {
         System.out.println("Nilai Kinerja: " + mhs1.nilaiKinerja());
 
         System.out.println("\n=== Update IPK Valid ===");
-        mhs1.updateIpk(3.8);
+        mhs1.updateIpk(3.0);
         mhs1.tampilkanInformasi();
+        System.out.println("Nilai Kinerja: " + mhs1.nilaiKinerja());
 
         System.out.println("\n=== Update IPK Tidak Valid ===");
         mhs1.updateIpk(4.5);
         mhs1.tampilkanInformasi();
+        System.out.println("Nilai Kinerja: " + mhs1.nilaiKinerja());
     }
 }

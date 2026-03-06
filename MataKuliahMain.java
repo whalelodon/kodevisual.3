@@ -24,12 +24,12 @@ public class MataKuliahMain {
             System.out.println("-----------------------------");
         }
 
-        public void ubahSKS(int sksBaru) {
+        void ubahSKS(int sksBaru) {
             sks = sksBaru;
             System.out.println("SKS berhasil diubah menjadi " + sks);
         }
 
-        public void tambahJam(int jam) {
+        void tambahJam(int jam) {
             jumlahJam += jam;
             System.out.println("Jumlah jam berhasil ditambah. Total jam sekarang: " + jumlahJam);
         }
